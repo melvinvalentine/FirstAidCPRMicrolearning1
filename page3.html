@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page 3 - Discussion</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-image page3">
+  <div class="container overlay">
+    <h1>Discussion Question</h1>
+    <p>In what types of real-life situations do you think you might need to use CPR, and how prepared do you feel to act in that moment?</p>
+
+    <form id="discussionForm">
+      <label for="email">Enter your @allforkids.org email:</label><br />
+      <input type="email" id="email" name="email" required pattern=".+@allforkids\.org" placeholder="yourname@allforkids.org" /><br /><br />
+
+      <label for="response">Your Response:</label><br />
+      <textarea id="response" name="response" rows="6" required placeholder="Type your answer here..."></textarea><br /><br />
+
+      <button type="submit" class="custom-btn">
+        <img src="images/submit_button.svg" alt="Submit" class="btn-img" />
+      </button>
+    </form>
+
+    <div id="thank-you-message">
+      ✅ Thank you for your submission! We’ve received your response.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('discussionForm');
+    const thankYou = document.getElementById('thank-you-message');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        await fetch("https://getform.io/f/bdrdqmmb", {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+        form.style.display = "none";
+        thankYou.style.display = "block";
+      } catch (error) {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

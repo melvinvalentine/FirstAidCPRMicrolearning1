@@ -1,0 +1,115 @@
+/* Background for all pages */
+.bg-image {
+    background: url("../images/all_for_kids_background.png") no-repeat center center fixed;
+    background-size: contain;
+    background-color: #0067B2; /* only shows if image doesn't fully cover */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Responsive tweak for mobile */
+@media (max-width: 768px) {
+    .bg-image {
+        background-size: cover;
+    }
+    .video-wrapper iframe {
+        height: 300px;
+    }
+    .overlay {
+        padding: 20px;
+    }
+}
+
+/* Overlay section styling */
+.overlay {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    font-size: 1.25em;
+    line-height: 1.6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 40px;
+}
+
+/* Page-specific title styling */
+body.page1 h1 {
+    color: white;
+}
+
+body.page2 h1,
+body.page3 h1 {
+    color: black;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.bullet-points {
+    text-align: left;
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 1.25em;
+    line-height: 1.6;
+}
+
+textarea,
+input[type="email"],
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.custom-btn {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-img {
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-img:hover {
+    transform: scale(1.05);
+}
+
+#thank-you-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    font-weight: bold;
+}
